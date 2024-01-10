@@ -1,0 +1,16 @@
+Transactions :
+---------------
+1.Database operations concurrency achieved by Transactions.
+  A - Atomicity
+  C - Consistency
+  I - Isolation
+      Locks :[Database achieves concurrency between transaction through take lock on rows]
+        Shared Locks -> Locked row always open for read operations. But Update transaction should wait for other running operations on the Locked row.
+        Exclusive Locks -> Both READ/UPDATE operations should wait for other running transaction on the row.
+      Types: [Performance get reduce when Isolation level increase.]
+        1. READ UNCOMMITED(Dirty Read,No locks,Performance high)
+        2. READ COMMITED 
+        3. REPEATABLE READS -> Write needed Exclusive locks./Read with Update intent also needed exclusive locks.
+        4. SERIALIZABLE ->
+  D - Durability
+  
