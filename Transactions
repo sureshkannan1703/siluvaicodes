@@ -11,6 +11,11 @@ Transactions :
         1. READ UNCOMMITED(Dirty Read,No locks,Performance high)
         2. READ COMMITED 
         3. REPEATABLE READS -> Write needed Exclusive locks./Read with Update intent also needed exclusive locks.
-        4. SERIALIZABLE ->
+        4. SERIALIZABLE -> Most Strictest Isolation Level.
   D - Durability
-  
+
+Isolation level set Syntax :
+  SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+  SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; (Postgres)
+  SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ; (MySQL) Like Scaler,Facebook.
+  SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE; Like Banking Application DBMS.
