@@ -1,0 +1,32 @@
+Indexing :
+* Helps to make the retrival process more efficient.
+* Some RDMS systems create Indexes automatically for a Table by using PRIMARY_KEY of the Table.
+* Always a good practice is create index based on our requirment.
+  SYNTAX:
+  1. CREATE INDEX indx_name
+     ON table_name (column_name);
+
+  2. SHOW INDEX FROM table_name;
+  (Note - Mostly DBMS create default index for each table by PIMARY_KEY)
+* Cost Of Index : More indexes leads to slower the update process.
+* If we have composite index by (X,Y), dont't need to create seperate index for X.(Read below about this)
+* Index created by combined columns/composite columns implemented by B-Trees(Balanced trees/Self balance trees).
+* Creating Index for column,which is already a member of a composite index not require. because can access the single colum of a composite column also possible in indexes.
+  
+In relational databases, creating an index on a single column that is already part of a composite index is not strictly necessary. This is because queries that involve the single column can still benefit from the composite index, as long as the leading part of the composite index is used in the query.
+Here's an example:
+  Assume you have a composite index on (column1, column2):
+
+  CREATE INDEX idx_composite ON your_table (column1, column2);
+  If you have queries that filter or search based on column1, the composite index can still be used efficiently. For example:
+
+  -- The composite index can be used for this query
+  SELECT * FROM your_table WHERE column1 = 'some_value';
+  However, if you have queries that only involve column2 and don't use column1 in the WHERE clause, the composite index might not be as effective for those queries.
+
+  -- The composite index might not be as effective for this query
+  SELECT * FROM your_table WHERE column2 = 'some_value';
+  In such cases, you might consider creating a separate index on column2 if the performance of those queries is critical:
+
+  CREATE INDEX idx_single_column ON your_table (column2);
+  Keep in mind that creating indexes comes with trade-offs, such as increased storage requirements and potential performance impacts on write operations (INSERT, UPDATE, DELETE). It's essential to analyze your specific query patterns and performance requirements before deciding on the indexes to create

@@ -1,0 +1,18 @@
+Schema Design Steps of RDBMS : (Pictorial Representation/Blue print of DBMS)
+----------------------------------------------------------------------------
+*Requirments gathering.
+*Identifying Entities/Nouns to form tables.
+*Identify Primary_Key,Foreign_key on each table.
+*Cardinality:(Relation b/w entities)
+    1. 1:1 -> General column can be place on anyone table out of those two tables.
+    2. 1:M  ->}  General coulum should be place on "Many" relation side table.
+    3. M:1  ->}
+    4. M:M -> Create new table with M:M relationship columns(Lookup/Mapping table)
+*Normalization:(Normalization forms(NF) - Concept of reducing data redundancy in each table)
+    1-NF -> Every table column values(cells) should be follow "Atomic" property.
+    2-NF -> Each column of table should be the attribute of Primary_key column.
+            [Not same entity representation columns part of a table. 
+            Ex- [st_id,st_course_id,course_instructor,course_duration]-Here apart from course_id ,course related columns should be placed in separate table(course_info).
+    3-BNF (Practically not used in most of Schema design process)
+  *Create Indexes for your table's based on most frequent using table rows.
+   (Always make sure your table have 90% reduntant querries retrived by indexing)

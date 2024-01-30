@@ -1,0 +1,26 @@
+Transactions :
+---------------
+1.Database operations concurrency achieved by Transactions.
+  A - Atomicity
+  C - Consistency
+  I - Isolation
+      Locks :[Database achieves concurrency between transaction through take lock on rows]
+        Shared Locks -> Locked row always open for read operations. But Update transaction should wait for other running operations on the Locked row.
+        Exclusive Locks -> Both READ/UPDATE operations should wait for other running transaction on the row.
+      Types: [Performance get reduce when Isolation level increase.]
+        1. READ UNCOMMITED(Dirty Read,No locks,Performance high)
+        2. READ COMMITED 
+        3. REPEATABLE READS -> Write needed Exclusive locks./Read with Update intent also needed exclusive locks.
+        4. SERIALIZABLE -> Most Strictest Isolation Level.
+  D - Durability
+
+Isolation level set Syntax :
+  SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+  SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; (Postgres)
+  SET SESSION TRANSACTION ISOLATION LEVEL REPEATABLE READ; (MySQL) Like Scaler,Facebook.
+  SET SESSION TRANSACTION ISOLATION LEVEL SERIALIZABLE; Like Banking Application DBMS.
+
+START TRANSACTION;
+BEGIN;
+//transaction querries.
+COMMIT;
