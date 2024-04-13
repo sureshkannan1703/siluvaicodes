@@ -1,0 +1,37 @@
+Spring framework :
+------------------
+1. Test - 
+      Junit,TestNG
+2. AOP :
+    Programming approach to achieve software modularity.
+    1.XML configuration 2.Annotation configuration
+4.5
+    Aspect Advice types :
+      Before
+      After
+      After returning
+      Aftert throwing
+      Around
+      
+3. Core container :
+    Core
+    Bean
+    Context
+    Expression Language
+4. Data Access Integration
+    JXM
+    JMS
+    ORM
+    JDBC
+5. Web
+    Web
+    Servlet
+6. Spring MVC :
+    Spring MVC framework uses the DispatcherServlet class as the controller which is responsible for handling all the requests and responses.
+
+
+Injection:
+Injection is a process of passing the dependency to a dependent object.
+
+Dependency Injection (DI):
+Dependency Injection (DI) is a design pattern that implements inversion of control principle for resolving dependencies. It allows a programmer to remove hard coded dependencies so that the application becomes loosely coupled and extendable.
